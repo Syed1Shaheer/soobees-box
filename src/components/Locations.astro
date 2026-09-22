@@ -1,0 +1,198 @@
+---
+import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
+
+const factoryVisitUrl = createWhatsAppUrl(
+  BUSINESS_INFO.contacts.headOffice,
+  "Assalam-o-Alaikum, I would like to schedule a factory visit or pickup at the S.I.T.E. Area facility in Karachi."
+);
+
+const outletVisitUrl = createWhatsAppUrl(
+  BUSINESS_INFO.contacts.salesOfficers[0].phone,
+  "Assalam-o-Alaikum, I am planning to visit the Hyderi Gold Mark Mall outlet for packaging samples."
+);
+---
+
+<section class="locations-section section-spacing" id="locations" aria-label="Karachi Manufacturing Facility and Retail Outlet">
+  <div class="container">
+    <div class="section-intro animate-in">
+      <span class="badge badge-gold">Karachi Footprint</span>
+      <h2 class="section-title">Factory & Retail Outlet Locations</h2>
+      <p class="section-subtitle">
+        We serve businesses across Pakistan from two strategic points in Karachi: our heavy-duty manufacturing and dispatch plant in S.I.T.E. Area, and our dedicated retail showroom in North Nazimabad.
+      </p>
+    </div>
+
+    <div class="locations-grid">
+      <!-- Location 1: S.I.T.E. Area Manufacturing Facility -->
+      <div class="location-card surface-card animate-in stagger-1">
+        <div class="loc-badge-wrapper">
+          <span class="badge badge-gold">Manufacturing & Bulk Supply</span>
+        </div>
+        <h3 class="loc-title">{BUSINESS_INFO.factoryLocation.title}</h3>
+        <p class="loc-area">{BUSINESS_INFO.factoryLocation.area}</p>
+
+        <p class="loc-desc">
+          The operational center of Soobee’s Box. Handles bulk production runs, hot-stamp die casting, raw velvet processing, quality inspection, and nationwide freight dispatches.
+        </p>
+
+        <div class="loc-services">
+          <span class="service-tag">Bulk Order Pickup</span>
+          <span class="service-tag">Custom Logo Tooling</span>
+          <span class="service-tag">Factory Direct Pricing</span>
+          <span class="service-tag">Nationwide Logistics</span>
+        </div>
+
+        <div class="loc-footer">
+          <span class="loc-timing">Primary Dispatch & Heavy Wholesale Orders</span>
+          <a 
+            href={factoryVisitUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary loc-btn"
+          >
+            <span>Coordinate Factory Dispatch</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Location 2: Hyderi Gold Mark Mall Retail Outlet -->
+      <div class="location-card surface-card animate-in stagger-2">
+        <div class="loc-badge-wrapper">
+          <span class="badge badge-neutral">Retail Showroom & Samples</span>
+        </div>
+        <h3 class="loc-title">{BUSINESS_INFO.retailOutlet.title}</h3>
+        <p class="loc-area" style="font-size: 0.9375rem; font-weight: 500;">
+          {BUSINESS_INFO.retailOutlet.address}
+        </p>
+
+        <p class="loc-desc">
+          Conveniently situated in Karachi’s major commercial gold hub. Ideal for jewelers and ecommerce store founders who wish to touch and inspect velvet materials, review sample boxes, or purchase immediate shelf stock.
+        </p>
+
+        <div class="loc-services">
+          <span class="service-tag">Immediate Stock Purchases</span>
+          <span class="service-tag">Sample Quality Inspection</span>
+          <span class="service-tag">In-Person Consultation</span>
+          <span class="service-tag">Box Size Fitting</span>
+        </div>
+
+        <div class="loc-footer">
+          <span class="loc-timing">First Floor, Shop #34 to 37</span>
+          <a 
+            href={outletVisitUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-secondary loc-btn"
+          >
+            <span>Contact Outlet Representative</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .locations-section {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .section-intro {
+    max-width: 780px;
+    margin-bottom: 3.5rem;
+  }
+
+  .section-title {
+    margin-top: 0.75rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    .locations-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .location-card {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .loc-badge-wrapper {
+    margin-bottom: 1rem;
+  }
+
+  .loc-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+  }
+
+  .loc-area {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-gold-hover);
+    line-height: 1.45;
+    margin-bottom: 1.25rem;
+  }
+
+  .loc-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+  }
+
+  .loc-services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .service-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.35rem 0.65rem;
+    background-color: var(--bg-surface-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    color: var(--text-primary);
+  }
+
+  .loc-footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .loc-timing {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .loc-btn {
+    width: 100%;
+  }
+</style>

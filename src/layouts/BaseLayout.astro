@@ -1,0 +1,77 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Soobee's Box | Pakistan's Complete Jewelry & Watch Packaging Manufacturer",
+  description = "Karachi-based manufacturer and supplier of velvet jewelry boxes, watch packaging, and custom logo embossing. S.I.T.E. Area factory & Hyderi Gold Mark Mall outlet."
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/logo.png" />
+
+    <!-- Fontshare Fonts: Cabinet Grotesk + Satoshi -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&f[]=satoshi@700,500,400&display=swap" />
+
+    <!-- Core Design System CSS -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <slot />
+
+    <!-- Smooth Appearance Animation & Interaction Script -->
+    <script>
+      // Intersection Observer for silky scroll appearance
+      document.addEventListener('DOMContentLoaded', () => {
+        const animatedElements = document.querySelectorAll('.animate-in');
+        
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                obs.unobserve(entry.target);
+              }
+            });
+          }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -40px 0px'
+          });
+
+          animatedElements.forEach(el => observer.observe(el));
+        } else {
+          // Fallback if observer not supported
+          animatedElements.forEach(el => el.classList.add('is-visible'));
+        }
+
+        // Header shadow and elevation on scroll
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 20) {
+            header?.classList.add('header-scrolled');
+          } else {
+            header?.classList.remove('header-scrolled');
+          }
+        }, { passive: true });
+      });
+    </script>
+  </body>
+</html>

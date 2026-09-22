@@ -1,0 +1,226 @@
+---
+import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
+
+const traditionalJewelerUrl = createWhatsAppUrl(
+  BUSINESS_INFO.contacts.salesOfficers[0].phone,
+  "Assalam-o-Alaikum, I am a jeweler inquiring about bulk supply and wholesale catalog orders from Soobee's Box."
+);
+
+const ecommerceBrandUrl = createWhatsAppUrl(
+  BUSINESS_INFO.contacts.salesOfficers[2].phone,
+  "Assalam-o-Alaikum, I run an online jewelry/watch brand and want to discuss custom branded packaging and unboxing presentation."
+);
+---
+
+<section class="audience-section section-spacing" aria-label="Solutions Tailored to Your Business Model">
+  <div class="container">
+    <div class="section-intro animate-in">
+      <span class="badge badge-gold">Tailored Wholesale Solutions</span>
+      <h2 class="section-title">Designed for How You Sell</h2>
+      <p class="section-subtitle">
+        Whether you run a high-volume retail showroom in a traditional gold market or an emerging direct-to-consumer ecommerce store, Soobee’s Box aligns with your supply chain and branding priorities.
+      </p>
+    </div>
+
+    <div class="audience-grid">
+      <!-- Traditional Jeweler Card -->
+      <div class="audience-card surface-card animate-in stagger-1">
+        <div class="card-inner">
+          <div class="audience-pill">For Traditional Jewelers & Wholesalers</div>
+          <h3 class="audience-heading">One Supplier for All Your Jewelry & Watch Boxes</h3>
+          <p class="audience-desc">
+            Simplify procurement. Instead of coordinating with multiple box traders across markets, order your entire range—from ring foam boxes to multi-bangle bridal cases and watch packaging—directly from our Karachi manufacturing base.
+          </p>
+
+          <div class="priority-block">
+            <span class="priority-title">What matters to you:</span>
+            <ul class="priority-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="p-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Complete catalogue breadth under one invoice</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="p-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Wholesale factory pricing with bulk capacity</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="p-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Cross-category convenience: Add watch packaging effortlessly</span>
+              </li>
+            </ul>
+          </div>
+
+          <a 
+            href={traditionalJewelerUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-secondary audience-cta"
+          >
+            <span>Inquire as Traditional Jeweler</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Ecommerce & Emerging Brands Card -->
+      <div class="audience-card surface-card ecommerce-featured animate-in stagger-2">
+        <div class="card-inner">
+          <div class="audience-pill gold">For Ecommerce & Emerging Brands</div>
+          <h3 class="audience-heading">Your Logo, Our Craftsmanship</h3>
+          <p class="audience-desc">
+            Your customer’s first tactile connection with your brand happens at unboxing. We help Instagram stores, TikTok brands, and modern DTC labels create distinct private-label packaging where your logo is the hero.
+          </p>
+
+          <div class="priority-block">
+            <span class="priority-title">What matters to you:</span>
+            <ul class="priority-list">
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="p-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Instagram & TikTok camera-ready velvet presentation</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="p-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Precision hot-foil custom logo embossing</span>
+              </li>
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="p-icon"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Repeatable reordering as your online sales scale</span>
+              </li>
+            </ul>
+          </div>
+
+          <a 
+            href={ecommerceBrandUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary audience-cta"
+          >
+            <span>Inquire for Ecommerce Branding</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .audience-section {
+    background-color: var(--bg-page);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .section-intro {
+    max-width: 780px;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    margin-top: 0.75rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .audience-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media (min-width: 992px) {
+    .audience-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+  }
+
+  .audience-card {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .ecommerce-featured {
+    border-color: var(--accent-gold-border);
+    background: linear-gradient(180deg, #FFFFFF 0%, #FAF8F4 100%);
+  }
+
+  .audience-pill {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    background-color: var(--bg-surface-subtle);
+    padding: 0.3rem 0.65rem;
+    border-radius: 4px;
+    margin-bottom: 1.25rem;
+  }
+
+  .audience-pill.gold {
+    color: var(--accent-gold-hover);
+    background-color: var(--accent-gold-soft);
+    border: 1px solid var(--accent-gold-border);
+  }
+
+  .audience-heading {
+    font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .audience-desc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+  }
+
+  .priority-block {
+    background-color: var(--bg-page);
+    border: 1px solid var(--border-subtle);
+    border-radius: 6px;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .priority-title {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .priority-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .priority-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  .p-icon {
+    color: var(--accent-gold);
+    flex-shrink: 0;
+  }
+
+  .audience-cta {
+    width: 100%;
+  }
+</style>

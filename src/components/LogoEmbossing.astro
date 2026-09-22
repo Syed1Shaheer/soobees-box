@@ -1,0 +1,415 @@
+---
+import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
+
+const logoInquiryUrl = createWhatsAppUrl(
+  BUSINESS_INFO.contacts.headOffice,
+  "Assalam-o-Alaikum, I am interested in custom logo embossing on velvet packaging from Soobee's Box for my brand."
+);
+---
+
+<section class="branding-section section-spacing" id="branding" aria-label="Custom Logo Embossing Services">
+  <div class="container">
+    <div class="branding-grid">
+      <!-- Left Column: Strategy & B2B Process -->
+      <div class="branding-content animate-in">
+        <span class="badge badge-gold">The Primary Differentiator</span>
+        <h2 class="branding-title">Custom Logo Embossing</h2>
+        <p class="branding-lead">
+          <strong>Your logo. Our craftsmanship.</strong> Don't let your jewelry or watch business ship inside generic, unbranded boxes. We turn packaging into an unboxing experience that puts your company’s identity front and center.
+        </p>
+
+        <div class="steps-container">
+          <div class="step-row">
+            <div class="step-num">01</div>
+            <div class="step-detail">
+              <strong>Vector Logo Provision</strong>
+              <p>Provide your brand artwork (vector format preferred). Our in-house tooling team prepares the hot-stamp die.</p>
+            </div>
+          </div>
+
+          <div class="step-row">
+            <div class="step-num">02</div>
+            <div class="step-detail">
+              <strong>Precision Die-Stamping</strong>
+              <p>We heat-deboss the metallic foil directly onto the velvet box lid for razor-sharp edge definition and tactile depth.</p>
+            </div>
+          </div>
+
+          <div class="step-row">
+            <div class="step-num">03</div>
+            <div class="step-detail">
+              <strong>Bulk Packaging Delivery</strong>
+              <p>Delivered direct from our Karachi S.I.T.E. factory to your storefront, warehouse, or fulfillment center across Pakistan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="branding-cta-row">
+          <a 
+            href={logoInquiryUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="btn btn-primary"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+            <span>Inquire About Custom Stamping</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Foil Deboss Live Simulator -->
+      <div class="branding-simulator animate-in stagger-2">
+        <div class="simulator-card surface-card">
+          <div class="sim-header">
+            <div>
+              <span class="sim-tag">Interactive Preview</span>
+              <h3 class="sim-title">Test Your Brand on Velvet</h3>
+            </div>
+            <span class="sim-pill">Foil Simulation</span>
+          </div>
+
+          <!-- Input for Brand Name -->
+          <div class="sim-input-group">
+            <label for="brandNameInput" class="sim-label">Type Your Brand or Store Name:</label>
+            <input 
+              type="text" 
+              id="brandNameInput" 
+              value="AL-NOOR JEWELERS" 
+              maxlength="26" 
+              class="sim-input"
+              aria-label="Brand name for foil simulation"
+            />
+          </div>
+
+          <!-- Live Box Canvas -->
+          <div class="sim-box-stage">
+            <div class="sim-velvet-box" id="simBox">
+              <div class="sim-texture"></div>
+              <div class="sim-bevel"></div>
+
+              <div class="sim-embossed-content">
+                <div class="sim-crown-icon">
+                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5z"></path>
+                    <path d="M5 19h14"></path>
+                  </svg>
+                </div>
+                <div class="sim-brand-text" id="simBrandDisplay">AL-NOOR JEWELERS</div>
+                <div class="sim-sub-text">FINE JEWELRY</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Buttons for Simulator -->
+          <div class="sim-controls">
+            <span class="sim-controls-label">Box Color:</span>
+            <div class="sim-swatches">
+              <button type="button" class="sim-swatch active" data-bg="#0D1626" style="background-color: #0D1626;" title="Navy Velvet"></button>
+              <button type="button" class="sim-swatch" data-bg="#5C1924" style="background-color: #5C1924;" title="Maroon Velvet"></button>
+              <button type="button" class="sim-swatch" data-bg="#18191C" style="background-color: #18191C;" title="Black Velvet"></button>
+              <button type="button" class="sim-swatch" data-bg="#7A1821" style="background-color: #7A1821;" title="Red Velvet"></button>
+            </div>
+          </div>
+
+          <p class="sim-note">
+            Actual production utilizes brass hot-stamping dies with high-durability metallic leaf foil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .branding-section {
+    background-color: var(--bg-page);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .branding-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+    align-items: center;
+  }
+
+  @media (min-width: 992px) {
+    .branding-grid {
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+    }
+  }
+
+  .branding-title {
+    margin-top: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .branding-lead {
+    font-size: 1.125rem;
+    line-height: 1.68;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  .branding-lead strong {
+    color: var(--text-primary);
+  }
+
+  .steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .step-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .step-num {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--accent-gold);
+    background-color: var(--accent-gold-soft);
+    border: 1px solid var(--accent-gold-border);
+    width: 38px;
+    height: 38px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .step-detail strong {
+    display: block;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .step-detail p {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+  }
+
+  /* Simulator Card */
+  .simulator-card {
+    padding: 2rem;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+  }
+
+  .sim-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .sim-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .sim-title {
+    font-size: 1.25rem;
+  }
+
+  .sim-pill {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    background-color: var(--accent-gold-soft);
+    color: var(--accent-gold-hover);
+    border: 1px solid var(--accent-gold-border);
+    border-radius: 4px;
+  }
+
+  .sim-input-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .sim-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .sim-input {
+    width: 100%;
+    height: 44px;
+    padding: 0 1rem;
+    font-size: 0.9375rem;
+    border: 1px solid var(--border-medium);
+    border-radius: 6px;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    outline: none;
+    transition: all var(--duration-fast) var(--ease-out);
+    text-transform: uppercase;
+  }
+
+  .sim-input:focus {
+    border-color: var(--accent-gold);
+    background-color: #FFFFFF;
+  }
+
+  /* Box Stage */
+  .sim-box-stage {
+    padding: 0.5rem 0 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sim-velvet-box {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background-color: #0D1626;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.35s var(--ease-out);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.15),
+                inset 0 -3px 8px rgba(0, 0, 0, 0.55),
+                0 12px 24px -6px rgba(18, 20, 23, 0.25);
+    overflow: hidden;
+  }
+
+  .sim-texture {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 40% 30%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .sim-bevel {
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    pointer-events: none;
+  }
+
+  .sim-embossed-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #DFB769;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2), 0 -1px 2px rgba(0, 0, 0, 0.65);
+    padding: 0 1rem;
+  }
+
+  .sim-crown-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0.35rem;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.4));
+  }
+
+  .sim-brand-text {
+    font-family: var(--font-display);
+    font-size: 1.125rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+
+  .sim-sub-text {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    margin-top: 0.25rem;
+    opacity: 0.85;
+  }
+
+  .sim-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .sim-controls-label {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .sim-swatches {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .sim-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 0 0 1px var(--border-medium);
+    cursor: pointer;
+    transition: transform var(--duration-fast) var(--ease-out);
+  }
+
+  .sim-swatch:hover {
+    transform: scale(1.12);
+  }
+
+  .sim-swatch.active {
+    box-shadow: 0 0 0 2px var(--accent-gold);
+    transform: scale(1.15);
+  }
+
+  .sim-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    line-height: 1.45;
+  }
+</style>
+
+<script>
+  const nameInput = document.getElementById('brandNameInput') as HTMLInputElement | null;
+  const brandDisplay = document.getElementById('simBrandDisplay');
+  const simBox = document.getElementById('simBox');
+  const simSwatches = document.querySelectorAll('.sim-swatch');
+
+  if (nameInput && brandDisplay) {
+    nameInput.addEventListener('input', (e) => {
+      const val = (e.target as HTMLInputElement).value.trim();
+      brandDisplay.textContent = val ? val.toUpperCase() : 'YOUR BRAND';
+    });
+  }
+
+  simSwatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      simSwatches.forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+
+      const bg = swatch.getAttribute('data-bg');
+      if (simBox && bg) {
+        simBox.style.backgroundColor = bg;
+      }
+    });
+  });
+</script>

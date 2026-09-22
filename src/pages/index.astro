@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import BrandPillars from '../components/BrandPillars.astro';
+import CatalogueExplorer from '../components/CatalogueExplorer.astro';
+import LogoEmbossing from '../components/LogoEmbossing.astro';
+import WatchCallout from '../components/WatchCallout.astro';
+import AudienceSegments from '../components/AudienceSegments.astro';
+import Locations from '../components/Locations.astro';
+import ContactWhatsApp from '../components/ContactWhatsApp.astro';
+import Footer from '../components/Footer.astro';
+import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
+
+const floatingWhatsAppUrl = createWhatsAppUrl(
+  BUSINESS_INFO.contacts.headOffice,
+  "Assalam-o-Alaikum, I would like to inquire about jewelry and watch packaging from Soobee's Box."
+);
+---
+
+<BaseLayout
+  title="Soobee's Box | Pakistan's Complete Jewelry & Watch Packaging Manufacturer"
+  description="Karachi-based manufacturer of velvet jewelry boxes, watch packaging, and custom logo embossing. S.I.T.E. Area factory & Hyderi Gold Mark Mall retail outlet."
+>
+  <Header />
+
+  <main id="main-content">
+    <Hero />
+    <BrandPillars />
+    <CatalogueExplorer />
+    <LogoEmbossing />
+    <WatchCallout />
+    <AudienceSegments />
+    <Locations />
+    <ContactWhatsApp />
+  </main>
+
+  <Footer />
+
+  <!-- Floating Sticky WhatsApp Button (Mobile-First Convenience) -->
+  <aside class="floating-wa-wrapper" aria-label="Quick WhatsApp Contact">
+    <a 
+      href={floatingWhatsAppUrl} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="floating-wa-btn"
+      aria-label="Direct WhatsApp Chat with Soobee's Box (0333-1145554)"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+      <span class="floating-wa-text">Wholesale Inquiry</span>
+    </a>
+  </aside>
+</BaseLayout>
+
+<style>
+  .floating-wa-wrapper {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 999;
+  }
+
+  .floating-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.125rem;
+    background-color: var(--accent-gold);
+    color: #FFFFFF;
+    border-radius: 50px;
+    box-shadow: 0 4px 18px rgba(184, 135, 70, 0.45);
+    transition: all var(--duration-normal) var(--ease-out);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .floating-wa-btn:hover {
+    background-color: var(--accent-gold-hover);
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 6px 24px rgba(184, 135, 70, 0.55);
+  }
+
+  .floating-wa-text {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .floating-wa-text {
+      display: inline-block;
+    }
+  }
+</style>
