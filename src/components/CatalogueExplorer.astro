@@ -5,22 +5,13 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
 <section class="catalogue-section section-spacing" id="catalogue" aria-label="Documented Jewelry Packaging Catalogue">
   <div class="container">
     <div class="section-intro animate-in">
-      <span class="badge badge-gold">In-House Manufacturing Catalogue</span>
-      <h2 class="section-title">28 Documented Jewelry Box Configurations</h2>
+      <p class="section-eyebrow">In-House Manufacturing Catalogue</p>
+      <h2 class="section-title">28 Documented Box Configurations</h2>
       <p class="section-subtitle">
         Every SKU is manufactured with strict dimension consistency and high-grade velvet upholstery. Filter by category or search by item type to find the exact box code for your jewelry pieces.
       </p>
-
-      <!-- Standard Color Availability Notice (Strict Brand Rule) -->
-      <div class="colors-banner">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="banner-icon" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="16" x2="12" y2="12"></line>
-          <line x1="12" y1="8" x2="12.01" y2="8"></line>
-        </svg>
-        <span>
-          <strong>Standard Color Availability:</strong> Documented colors across most lines include <strong>Black, Maroon, Red, Blue, and Purple</strong>. Custom branding and logo embossing available on all lines.
-        </span>
+      <div class="colors-notice">
+        Standard velvet colors across all lines: <strong>Black, Maroon, Red, Blue, Purple.</strong> Custom colors and logo embossing available on inquiry.
       </div>
     </div>
 
@@ -31,10 +22,10 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </svg>
-        <input 
-          type="text" 
-          id="productSearchInput" 
-          placeholder="Search by jewelry type (e.g., ring, gold coin, bangles, jhumki, cufflinks)..." 
+        <input
+          type="text"
+          id="productSearchInput"
+          placeholder="Search by jewelry type (e.g., ring, gold coin, bangles, jhumki, cufflinks)..."
           aria-label="Search documented jewelry boxes"
           class="search-input"
         />
@@ -42,9 +33,9 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
 
       <div class="category-filters" role="tablist" aria-label="Catalogue category filters">
         {CATEGORIES.map((cat, idx) => (
-          <button 
-            type="button" 
-            class={`filter-pill ${idx === 0 ? 'active' : ''}`} 
+          <button
+            type="button"
+            class={`filter-pill ${idx === 0 ? 'active' : ''}`}
             data-category={cat}
             role="tab"
             aria-selected={idx === 0 ? "true" : "false"}
@@ -64,13 +55,16 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
         );
 
         return (
-          <div 
-            class="product-card surface-card" 
+          <div
+            class="product-card"
             data-category={product.category}
             data-name={product.name.toLowerCase()}
             data-code={product.code}
             data-item={product.itemType.toLowerCase()}
           >
+            <!-- Gold top accent strip -->
+            <div class="card-strip" aria-hidden="true"></div>
+
             <div class="product-card-top">
               <div class="sku-badge">
                 <span class="sku-label">CODE</span>
@@ -89,22 +83,22 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
 
             <div class="product-footer">
               <div class="swatches-mini">
-                <span class="swatches-label">Standard Colors:</span>
-                <div class="swatch-dots" title="Available in Black, Maroon, Red, Blue, Purple">
+                <span class="swatches-label">Colors:</span>
+                <div class="swatch-pills-row" title="Available in Black, Maroon, Red, Blue, Purple">
                   {DOCUMENTED_COLORS.map(c => (
-                    <span class="dot" style={`background-color: ${c.hex}`} title={c.name}></span>
+                    <span class="swatch-pill-mini" style={`background-color: ${c.hex}`} title={c.name}></span>
                   ))}
                 </div>
               </div>
 
-              <a 
-                href={itemWhatsApp} 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <a
+                href={itemWhatsApp}
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary btn-inquire"
                 aria-label={`Inquire about ${product.name} Code ${product.code} on WhatsApp`}
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                 </svg>
                 <span>WhatsApp Quote</span>
@@ -115,7 +109,7 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
       })}
     </div>
 
-    <!-- Empty search result state -->
+    <!-- Empty state -->
     <div class="empty-state" id="emptyState" style="display: none;">
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="empty-icon">
         <circle cx="11" cy="11" r="8"></circle>
@@ -123,9 +117,9 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
       </svg>
       <h4>No specific box found for that term</h4>
       <p>Please check the spelling or ask our sales officers directly for a recommendation.</p>
-      <a 
-        href={createWhatsAppUrl(BUSINESS_INFO.contacts.headOffice, "Assalam-o-Alaikum, I need help matching my jewelry item to the right box from Soobee's Box.")} 
-        class="btn btn-secondary" 
+      <a
+        href={createWhatsAppUrl(BUSINESS_INFO.contacts.headOffice, "Assalam-o-Alaikum, I need help matching my jewelry item to the right box from Soobee's Box.")}
+        class="btn btn-secondary"
         style="margin-top: 1rem;"
         target="_blank"
         rel="noopener noreferrer"
@@ -138,56 +132,55 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
 
 <style>
   .catalogue-section {
-    background-color: #FFFFFF;
+    background-color: var(--bg-page);
     border-bottom: 1px solid var(--border-subtle);
   }
 
   .section-intro {
-    max-width: 800px;
-    margin-bottom: 2.5rem;
+    max-width: 680px;
+    margin-bottom: 3rem;
+  }
+
+  .section-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    margin-bottom: 0.875rem;
   }
 
   .section-title {
-    margin-top: 0.75rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .section-subtitle {
-    font-size: 1.0625rem;
+    font-size: 1rem;
     color: var(--text-secondary);
-    line-height: 1.65;
-    margin-bottom: 1.5rem;
+    line-height: 1.68;
+    margin-bottom: 1.25rem;
   }
 
-  .colors-banner {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    padding: 1rem 1.25rem;
-    background-color: var(--bg-surface-subtle);
+  .colors-notice {
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    padding: 0.75rem 1.125rem;
+    background-color: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 6px;
-    font-size: 0.875rem;
-    line-height: 1.5;
+    border-radius: 8px;
+  }
+
+  .colors-notice strong {
     color: var(--text-secondary);
   }
 
-  .banner-icon {
-    color: var(--accent-gold);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .colors-banner strong {
-    color: var(--text-primary);
-  }
-
-  /* Search & Filter Controls */
+  /* Controls */
   .catalogue-controls {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.75rem;
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 1rem;
   }
 
   .search-wrapper {
@@ -197,7 +190,7 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
 
   .search-icon {
     position: absolute;
-    left: 1rem;
+    left: 1.125rem;
     top: 50%;
     transform: translateY(-50%);
     color: var(--text-muted);
@@ -206,22 +199,25 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
 
   .search-input {
     width: 100%;
-    height: 48px;
-    padding-left: 2.875rem;
+    height: 52px;
+    padding-left: 3rem;
     padding-right: 1.25rem;
     font-size: 0.9375rem;
     color: var(--text-primary);
-    background-color: var(--bg-page);
-    border: 1px solid var(--border-medium);
-    border-radius: 6px;
+    background-color: var(--bg-surface);
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 10px;
     outline: none;
     transition: all var(--duration-fast) var(--ease-out);
   }
 
   .search-input:focus {
     border-color: var(--accent-gold);
-    background-color: #FFFFFF;
     box-shadow: 0 0 0 3px var(--accent-gold-soft);
+  }
+
+  .search-input::placeholder {
+    color: var(--text-muted);
   }
 
   .category-filters {
@@ -230,16 +226,34 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
     gap: 0.5rem;
   }
 
+  /* Underline slide filter pills */
   .filter-pill {
     padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    background-color: var(--bg-surface-subtle);
-    border: 1px solid var(--border-subtle);
-    border-radius: 20px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    background-color: var(--bg-surface);
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 100px;
     color: var(--text-secondary);
     cursor: pointer;
-    transition: all var(--duration-fast) var(--ease-out);
+    transition: all var(--duration-normal) var(--ease-out);
+    min-height: 38px;
+    letter-spacing: 0.01em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .filter-pill::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-gold);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--duration-normal) var(--ease-out);
   }
 
   .filter-pill:hover {
@@ -247,17 +261,25 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
     border-color: var(--border-medium);
   }
 
+  .filter-pill:hover::before {
+    transform: scaleX(0.4);
+  }
+
   .filter-pill.active {
-    background-color: var(--text-primary);
+    background-color: var(--accent-gold);
     color: #FFFFFF;
-    border-color: var(--text-primary);
+    border-color: var(--accent-gold);
+  }
+
+  .filter-pill.active::before {
+    transform: scaleX(0);
   }
 
   /* Products Grid */
   .products-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
   }
 
   @media (min-width: 640px) {
@@ -272,54 +294,92 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
     }
   }
 
+  /* Product Card */
   .product-card {
-    padding: 1.75rem 1.5rem;
+    padding: 1.625rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    background-color: var(--bg-surface);
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+    transition:
+      transform var(--duration-normal) var(--ease-spring),
+      box-shadow var(--duration-normal) var(--ease-out),
+      border-color var(--duration-normal) var(--ease-out);
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .product-card:hover {
+    transform: scale(1.015) translateY(-5px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: var(--accent-gold-border);
+  }
+
+  /* Gold strip that slides in on hover */
+  .card-strip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--accent-gold);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.4s var(--ease-out);
+  }
+
+  .product-card:hover .card-strip {
+    clip-path: inset(0 0% 0 0);
   }
 
   .product-card-top {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 1rem;
   }
 
   .sku-badge {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.25rem;
+    gap: 0.3rem;
     background-color: var(--bg-surface-subtle);
-    padding: 0.2rem 0.55rem;
-    border-radius: 4px;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
     border: 1px solid var(--border-subtle);
   }
 
   .sku-label {
-    font-size: 0.6875rem;
+    font-size: 0.6rem;
     font-weight: 700;
     color: var(--text-muted);
-    letter-spacing: 0.05em;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
   }
 
   .sku-number {
-    font-family: var(--font-display);
+    font-family: 'Courier New', monospace;
     font-size: 0.875rem;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--accent-gold);
+    letter-spacing: 0.02em;
   }
 
   .category-label {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 600;
     color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
   }
 
   .product-title {
-    font-size: 1.1875rem;
-    margin-bottom: 0.375rem;
+    font-size: 1.125rem;
+    margin-bottom: 0.3rem;
     color: var(--text-primary);
+    line-height: 1.25;
   }
 
   .product-intended {
@@ -327,6 +387,7 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
     gap: 0.375rem;
     font-size: 0.8125rem;
     margin-bottom: 0.875rem;
+    align-items: center;
   }
 
   .intended-label {
@@ -335,24 +396,28 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
   }
 
   .intended-value {
-    color: var(--text-primary);
+    color: var(--accent-gold-text);
     font-weight: 600;
   }
 
+  [data-theme="dark"] .intended-value {
+    color: var(--accent-gold);
+  }
+
   .product-desc {
-    font-size: 0.875rem;
-    line-height: 1.55;
-    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--text-muted);
     margin-bottom: 1.5rem;
     flex-grow: 1;
   }
 
   .product-footer {
-    padding-top: 1.25rem;
+    padding-top: 1.125rem;
     border-top: 1px solid var(--border-subtle);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.875rem;
   }
 
   .swatches-mini {
@@ -362,41 +427,54 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
   }
 
   .swatches-label {
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     color: var(--text-muted);
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
-  .swatch-dots {
+  /* Wide pill swatches */
+  .swatch-pills-row {
     display: flex;
     gap: 0.35rem;
   }
 
-  .dot {
-    width: 13px;
-    height: 13px;
-    border-radius: 50%;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+  .swatch-pill-mini {
+    width: 28px;
+    height: 10px;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
     display: inline-block;
+    transition: transform var(--duration-fast) var(--ease-spring);
+  }
+
+  [data-theme="dark"] .swatch-pill-mini {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  .swatch-pill-mini:hover {
+    transform: scale(1.3);
   }
 
   .btn-inquire {
     width: 100%;
-    padding: 0.625rem 1rem;
+    padding: 0.6rem 1rem;
     font-size: 0.8125rem;
+    justify-content: center;
   }
 
   .empty-state {
     text-align: center;
-    padding: 4rem 1.5rem;
-    background-color: var(--bg-surface-subtle);
-    border-radius: 8px;
-    border: 1px dashed var(--border-medium);
+    padding: 5rem 1.5rem;
+    background-color: var(--bg-surface);
+    border-radius: 14px;
+    border: 1.5px dashed var(--border-medium);
   }
 
   .empty-icon {
     color: var(--text-muted);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 </style>
 
@@ -420,9 +498,9 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
       const item = el.getAttribute('data-item') || '';
 
       const matchesCat = activeCategory === 'All Boxes' || cat === activeCategory;
-      const matchesSearch = searchTerm === '' || 
-        name.includes(searchTerm) || 
-        code.includes(searchTerm) || 
+      const matchesSearch = searchTerm === '' ||
+        name.includes(searchTerm) ||
+        code.includes(searchTerm) ||
         item.includes(searchTerm);
 
       if (matchesCat && matchesSearch) {
@@ -438,7 +516,6 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
     }
   }
 
-  // Filter Click Handler
   filterPills.forEach(pill => {
     pill.addEventListener('click', () => {
       filterPills.forEach(p => {
@@ -453,7 +530,6 @@ import { PRODUCTS, CATEGORIES, DOCUMENTED_COLORS, BUSINESS_INFO, createWhatsAppU
     });
   });
 
-  // Search Input Handler
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
       searchTerm = (e.target as HTMLInputElement).value.trim().toLowerCase();

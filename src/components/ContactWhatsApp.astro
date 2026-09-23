@@ -7,8 +7,8 @@ import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
     <div class="contact-grid">
       <!-- Left Column: Direct Official Contact Directory -->
       <div class="contact-directory animate-in">
-        <span class="badge badge-gold">Direct Communications</span>
-        <h2 class="contact-title">Wholesale Inquiries & Sales Officers</h2>
+      <p class="section-eyebrow">Direct Communications</p>
+      <h2 class="contact-title">Wholesale Inquiries & Sales Officers</h2>
         <p class="contact-intro">
           Contact our team directly via phone or WhatsApp. For bulk wholesale orders, custom embossing quotations, and sample verifications, reach out to our dedicated officers.
         </p>
@@ -152,7 +152,8 @@ import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
 
 <style>
   .contact-section {
-    background-color: var(--bg-page);
+    background-color: var(--bg-surface-subtle);
+    border-bottom: 1px solid var(--border-subtle);
   }
 
   .contact-grid {
@@ -168,8 +169,17 @@ import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
     }
   }
 
+  .section-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    margin-bottom: 0.875rem;
+  }
+
   .contact-title {
-    margin-top: 0.75rem;
     margin-bottom: 1rem;
   }
 
@@ -190,7 +200,7 @@ import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
   .head-office-card {
     padding: 1.5rem;
     border-color: var(--accent-gold-border);
-    background: linear-gradient(135deg, #FFFFFF 0%, #FAF8F4 100%);
+    background-color: var(--accent-gold-soft);
   }
 
   .dir-role {
@@ -255,7 +265,14 @@ import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    background-color: #FFFFFF;
+    background-color: var(--bg-surface);
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 10px;
+    transition: border-color var(--duration-fast) var(--ease-out);
+  }
+
+  .officer-row:hover {
+    border-color: var(--accent-gold-border);
   }
 
   .officer-name {
@@ -300,8 +317,10 @@ import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
   /* RFQ Form Card */
   .rfq-card {
     padding: 2.25rem 2rem;
-    background-color: #FFFFFF;
-    border-radius: 12px;
+    background-color: var(--bg-surface);
+    border: 1.5px solid var(--border-subtle);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
   }
 
   .rfq-tag {
@@ -359,9 +378,9 @@ import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
   .form-input, .form-select, .form-textarea {
     width: 100%;
     padding: 0.65rem 0.875rem;
-    border: 1px solid var(--border-medium);
+    border: 1px solid var(--border-subtle);
     border-radius: 6px;
-    background-color: var(--bg-page);
+    background-color: var(--bg-surface-subtle);
     font-size: 0.875rem;
     color: var(--text-primary);
     outline: none;
@@ -370,7 +389,8 @@ import { BUSINESS_INFO, createWhatsAppUrl } from '../data/products';
 
   .form-input:focus, .form-select:focus, .form-textarea:focus {
     border-color: var(--accent-gold);
-    background-color: #FFFFFF;
+    background-color: var(--bg-surface);
+    box-shadow: 0 0 0 3px var(--accent-gold-soft);
   }
 
   .checkbox-group {

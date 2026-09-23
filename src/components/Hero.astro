@@ -5,167 +5,107 @@ const wholesaleUrl = createWhatsAppUrl(
   BUSINESS_INFO.contacts.headOffice,
   "Assalam-o-Alaikum, I would like to inquire about wholesale jewelry/watch packaging pricing and MOQ from Soobee's Box."
 );
+
+const colors = [
+  { name: 'Midnight Black', hex: '#1A1A1E' },
+  { name: 'Deep Maroon', hex: '#581622' },
+  { name: 'Crimson Red', hex: '#871923' },
+  { name: 'Royal Blue', hex: '#1C3352' },
+  { name: 'Regal Purple', hex: '#432247' },
+];
 ---
 
 <section class="hero-section" aria-label="Introduction to Soobee's Box">
   <div class="container hero-grid">
-    <!-- Left Column: Specific B2B Value Hook (60%) -->
+    <!-- Left Column: Core B2B Value Hook -->
     <div class="hero-content animate-in">
-      <div class="hero-badges">
-        <span class="badge badge-gold">Karachi S.I.T.E. Direct Manufacturer</span>
-        <span class="badge badge-neutral">Har Zewar, Har Ghari — Apna Andaaz</span>
-      </div>
+      <p class="hero-eyebrow">Karachi S.I.T.E. Area — Direct Manufacturer</p>
 
       <h1 class="hero-title">
-        Pakistan’s Complete Jewelry & Watch Packaging Manufacturer
+        Jewelry &amp; Watch<br>Packaging.<br>
+        <em>Factory Direct.</em>
       </h1>
 
       <p class="hero-lead">
-        <strong>One supplier. Every box category.</strong> We manufacture and distribute a complete catalogue of premium velvet jewelry boxes and watch packaging from Karachi's S.I.T.E. Area — featuring in-house custom logo embossing so your brand stays front and center.
+        One supplier. Every box category. We manufacture the full range of premium velvet jewelry boxes and watch packaging from our S.I.T.E. industrial facility, with in-house custom logo embossing.
       </p>
 
       <div class="hero-actions">
-        <a 
-          href={wholesaleUrl} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={wholesaleUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           class="btn btn-primary"
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
-          <span>Wholesale Quotation (WhatsApp)</span>
+          <span>Request Wholesale Quote</span>
         </a>
-
         <a href="#catalogue" class="btn btn-secondary">
-          <span>Browse 28+ Verified SKUs</span>
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <span>Browse 28 SKUs</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
       </div>
 
-      <!-- Trust Meta Points (No fake stats, verified facts only) -->
-      <div class="hero-credentials">
-        <div class="credential-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cred-icon">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
-          <div>
-            <strong>S.I.T.E. Area Factory</strong>
-            <span>Direct manufacturer pricing & bulk fulfillment</span>
-          </div>
+      <!-- Fact strip -->
+      <div class="hero-facts">
+        <div class="fact">
+          <span class="fact-label">Location</span>
+          <span class="fact-value">S.I.T.E. Area, Karachi</span>
         </div>
-
-        <div class="credential-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cred-icon">
-            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-          </svg>
-          <div>
-            <strong>Custom Logo Embossing</strong>
-            <span>Your logo precision stamped on velvet</span>
-          </div>
+        <div class="fact-divider" aria-hidden="true"></div>
+        <div class="fact">
+          <span class="fact-label">Categories</span>
+          <span class="fact-value">Jewelry + Watch Boxes</span>
         </div>
-
-        <div class="credential-item">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cred-icon">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-          </svg>
-          <div>
-            <strong>Jewelry & Watch Packaging</strong>
-            <span>Single-source procurement across Pakistan</span>
-          </div>
+        <div class="fact-divider" aria-hidden="true"></div>
+        <div class="fact">
+          <span class="fact-label">Branding</span>
+          <span class="fact-value">In-house Logo Embossing</span>
         </div>
       </div>
     </div>
 
-    <!-- Right Column: Interactive Tactile Velvet Showcase (40%) -->
-    <div class="hero-visual animate-in stagger-2">
-      <div class="box-showcase-card">
-        <div class="showcase-header">
-          <span class="showcase-caption">Live Material & Foil Simulator</span>
-          <span class="status-indicator" id="currentColorLabel">Midnight Navy Velvet</span>
-        </div>
+    <!-- Right Column: Velvet Showcase Panel -->
+    <div class="hero-showcase animate-in stagger-2 from-right" aria-label="Velvet colors and foil finish showcase">
+      <div class="showcase-panel">
 
-        <!-- Simulated Physical Velvet Box with Shimmering Embossed Crest -->
-        <div class="velvet-box-stage" id="boxStage">
-          <div class="velvet-lid" id="boxLid">
-            <div class="velvet-texture-overlay"></div>
-            
-            <!-- Precision Gold Foil Stamp of "SB" Monogram -->
-            <div class="embossed-foil-mark">
-              <div class="foil-glimmer"></div>
-              <div class="sb-monogram-art">
-                <svg viewBox="0 0 120 120" width="84" height="84" fill="currentColor" class="monogram-svg" aria-label="Soobee's Box Embossed Monogram">
-                  <path d="M38 25 C30 25, 22 32, 22 42 C22 52, 30 58, 38 62 C48 66, 52 70, 52 78 C52 86, 44 92, 34 92 C24 92, 16 84, 15 75 L6 75 C8 89, 20 100, 34 100 C50 100, 62 89, 62 76 C62 64, 52 58, 44 54 C34 50, 31 46, 31 40 C31 34, 36 30, 42 30 C48 30, 53 34, 54 40 L63 38 C60 28, 51 22, 38 25 Z" opacity="0.95" />
-                  <path d="M56 25 L88 25 C98 25, 106 31, 106 42 C106 49, 101 55, 94 58 C103 62, 108 69, 108 78 C108 90, 98 98, 86 98 L56 98 L56 25 Z M66 33 L66 54 L86 54 C92 54, 96 50, 96 44 C96 38, 92 33, 86 33 L66 33 Z M66 62 L66 89 L87 89 C93 89, 98 84, 98 76 C98 68, 93 62, 87 62 L66 62 Z" opacity="0.9" />
-                  <polygon points="50,70 65,60 80,70 65,80" opacity="0.85" />
-                </svg>
-              </div>
-              <span class="foil-subtext">SOOBEE’S BOX</span>
-            </div>
-
-            <div class="bevel-highlight"></div>
+        <!-- Dark velvet surface with shimmer foil -->
+        <div class="showcase-velvet">
+          <div class="foil-emboss-demo" aria-label="Gold foil embossing preview">
+            <div class="foil-ring"></div>
+            <svg width="52" height="52" viewBox="0 0 52 52" fill="none" aria-hidden="true">
+              <rect x="6" y="12" width="40" height="28" rx="2" stroke="#E5C37A" stroke-width="1.25" fill="none"/>
+              <line x1="14" y1="21" x2="38" y2="21" stroke="#E5C37A" stroke-width="1.25" stroke-linecap="round"/>
+              <line x1="14" y1="26" x2="30" y2="26" stroke="#E5C37A" stroke-width="1.25" stroke-linecap="round"/>
+              <line x1="14" y1="31" x2="22" y2="31" stroke="#E5C37A" stroke-width="1.25" stroke-linecap="round"/>
+              <circle cx="38" cy="32" r="5" stroke="#E5C37A" stroke-width="1.25" fill="none"/>
+              <path d="M36 32l1.5 1.5L40.5 30" stroke="#E5C37A" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="foil-brand-text">YOUR BRAND</span>
           </div>
+          <div class="showcase-velvet-label">Metallic hot-stamp foil embossing</div>
         </div>
 
-        <!-- Color Selector Swatches (The 5 Documented Colors) -->
-        <div class="swatch-panel">
-          <span class="swatch-title">Documented Standard Colors:</span>
-          <div class="swatch-list" role="radiogroup" aria-label="Box velvet color options">
-            <button 
-              type="button" 
-              class="swatch-btn active" 
-              data-color="navy" 
-              data-label="Navy Blue Velvet"
-              style="background-color: #112038;" 
-              aria-label="Select Navy Blue"
-              aria-checked="true"
-            ></button>
-            <button 
-              type="button" 
-              class="swatch-btn" 
-              data-color="black" 
-              data-label="Obsidian Black Velvet"
-              style="background-color: #1C1D21;" 
-              aria-label="Select Black"
-              aria-checked="false"
-            ></button>
-            <button 
-              type="button" 
-              class="swatch-btn" 
-              data-color="maroon" 
-              data-label="Imperial Maroon Velvet"
-              style="background-color: #631D27;" 
-              aria-label="Select Maroon"
-              aria-checked="false"
-            ></button>
-            <button 
-              type="button" 
-              class="swatch-btn" 
-              data-color="red" 
-              data-label="Crimson Red Velvet"
-              style="background-color: #8F1E28;" 
-              aria-label="Select Red"
-              aria-checked="false"
-            ></button>
-            <button 
-              type="button" 
-              class="swatch-btn" 
-              data-color="purple" 
-              data-label="Royal Purple Velvet"
-              style="background-color: #4A284D;" 
-              aria-label="Select Purple"
-              aria-checked="false"
-            ></button>
+        <!-- Color swatches as wide pills -->
+        <div class="showcase-swatches">
+          <p class="swatches-heading">Standard Velvet Upholstery — 5 Colors</p>
+          <div class="swatch-pills">
+            {colors.map((color) => (
+              <div class="swatch-pill">
+                <span class="swatch-pill-color" style={`background-color: ${color.hex}`} aria-hidden="true"></span>
+                <span class="swatch-pill-name">{color.name}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         <div class="showcase-footer">
-          <span class="showcase-hint">Available across most jewelry lines with custom gold foil debossing.</span>
+          <span class="showcase-footer-text">Custom colors &amp; logo embossing available on inquiry</span>
         </div>
       </div>
     </div>
@@ -174,298 +114,260 @@ const wholesaleUrl = createWhatsAppUrl(
 
 <style>
   .hero-section {
-    padding-top: 3.5rem;
-    padding-bottom: 4.5rem;
-    background: linear-gradient(180deg, #FFFFFF 0%, #F8F7F4 100%);
+    background-color: var(--bg-page);
     border-bottom: 1px solid var(--border-subtle);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 768px) {
     .hero-section {
-      padding-top: 5rem;
-      padding-bottom: 6rem;
+      padding-top: 7rem;
+      padding-bottom: 7rem;
     }
   }
 
   .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 3.5rem;
     align-items: center;
+    width: 100%;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 900px) {
     .hero-grid {
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 3.5rem;
+      grid-template-columns: 55% 1fr;
+      gap: 5rem;
     }
   }
 
-  .hero-badges {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+  .hero-content {
+    max-width: 640px;
+  }
+
+  /* Eyebrow */
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
     margin-bottom: 1.25rem;
   }
 
+  /* Large editorial heading */
   .hero-title {
-    font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+    margin-bottom: 1.5rem;
     color: var(--text-primary);
-    line-height: 1.12;
-    margin-bottom: 1.25rem;
+    line-height: 1.02;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent-gold);
+    font-weight: 600;
   }
 
   .hero-lead {
-    font-size: 1.125rem;
-    line-height: 1.68;
+    font-size: 1.0625rem;
+    line-height: 1.72;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 620px;
-  }
-
-  .hero-lead strong {
-    color: var(--text-primary);
+    margin-bottom: 2.25rem;
+    max-width: 500px;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.875rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
   }
 
-  .hero-credentials {
-    display: grid;
-    grid-template-columns: 1fr;
+  /* Fact strip */
+  .hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 1.25rem;
-    padding-top: 1.5rem;
+    padding-top: 2rem;
     border-top: 1px solid var(--border-subtle);
   }
 
-  @media (min-width: 640px) {
-    .hero-credentials {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+  .fact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .fact-label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+  }
+
+  .fact-value {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+  }
+
+  .fact-divider {
+    width: 1px;
+    height: 32px;
+    background-color: var(--border-subtle);
+    flex-shrink: 0;
+  }
+
+  /* ─── Showcase Panel ─── */
+  .hero-showcase {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 900px) {
+    .hero-showcase {
+      max-width: 100%;
+      margin: 0;
     }
   }
 
-  .credential-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.625rem;
-  }
-
-  .cred-icon {
-    color: var(--accent-gold);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .credential-item strong {
-    display: block;
-    font-size: 0.875rem;
-    color: var(--text-primary);
-    line-height: 1.3;
-    margin-bottom: 0.125rem;
-  }
-
-  .credential-item span {
-    display: block;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    line-height: 1.35;
-  }
-
-  /* Right Side: Velvet Box Visualizer Card */
-  .box-showcase-card {
-    background: #FFFFFF;
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow-lg);
-  }
-
-  .showcase-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--border-subtle);
-  }
-
-  .showcase-caption {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--text-muted);
-  }
-
-  .status-indicator {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--accent-gold);
-  }
-
-  .velvet-box-stage {
-    perspective: 1000px;
-    display: flex;
-    justify-content: center;
-    padding: 1rem 0;
-  }
-
-  .velvet-lid {
-    position: relative;
-    width: 100%;
-    max-width: 320px;
-    height: 240px;
-    background-color: #112038;
-    border-radius: 8px;
-    box-shadow: 
-      inset 0 1px 2px rgba(255, 255, 255, 0.12),
-      inset 0 -3px 8px rgba(0, 0, 0, 0.5),
-      0 18px 30px -10px rgba(18, 20, 23, 0.28);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.4s var(--ease-out);
+  .showcase-panel {
+    border-radius: 16px;
     overflow: hidden;
+    border: 1px solid var(--border-medium);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--bg-surface);
   }
 
-  /* Subtle velvet flocking texture via CSS gradient patterns */
-  .velvet-texture-overlay {
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 40% 30%, rgba(255, 255, 255, 0.12) 0%, transparent 60%),
-                radial-gradient(circle at 70% 80%, rgba(0, 0, 0, 0.25) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .bevel-highlight {
-    position: absolute;
-    inset: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 5px;
-    pointer-events: none;
-  }
-
-  /* Gold Foil Stamped Monogram */
-  .embossed-foil-mark {
-    position: relative;
+  /* Dark velvet area */
+  .showcase-velvet {
+    background-color: #0F0E0D;
+    padding: 2.5rem 2rem 1.75rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.25rem;
+    position: relative;
+    min-height: 200px;
     justify-content: center;
-    color: #D6A856;
-    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25), 0 -1px 2px rgba(0, 0, 0, 0.6);
-    z-index: 2;
   }
 
-  .monogram-svg {
-    filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
-    transition: transform var(--duration-normal) var(--ease-out);
-  }
-
-  .velvet-lid:hover .monogram-svg {
-    transform: scale(1.03);
-  }
-
-  .foil-subtext {
-    font-family: var(--font-display);
-    font-size: 0.8125rem;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    margin-top: 0.5rem;
-    color: #E2BC6E;
-  }
-
-  /* Swatch Controls */
-  .swatch-panel {
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  .swatch-title {
-    display: block;
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    margin-bottom: 0.625rem;
-  }
-
-  .swatch-list {
+  /* Foil emboss demo */
+  .foil-emboss-demo {
     display: flex;
-    gap: 0.75rem;
+    flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
+    position: relative;
   }
 
-  .swatch-btn {
-    width: 32px;
-    height: 32px;
+  /* Glowing ring behind the logo */
+  .foil-ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 2px solid #FFFFFF;
-    box-shadow: 0 0 0 1px var(--border-medium);
-    cursor: pointer;
-    transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+    border: 1px solid rgba(229, 195, 122, 0.2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: gold-pulse 3s ease-in-out infinite;
   }
 
-  .swatch-btn:hover {
-    transform: scale(1.1);
+  .foil-brand-text {
+    font-family: var(--font-display);
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #E5C37A;
+    /* Shimmer animation */
+    background: linear-gradient(
+      90deg,
+      #C9A254 0%,
+      #E5C37A 30%,
+      #F5DFA0 50%,
+      #E5C37A 70%,
+      #C9A254 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
   }
 
-  .swatch-btn.active {
-    box-shadow: 0 0 0 2px var(--accent-gold);
-    transform: scale(1.12);
+  .showcase-velvet-label {
+    font-size: 0.6875rem;
+    color: rgba(229, 195, 122, 0.45);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: var(--font-body);
   }
 
+  /* Swatches section */
+  .showcase-swatches {
+    padding: 1.5rem 1.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .swatches-heading {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+  }
+
+  .swatch-pills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .swatch-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .swatch-pill-color {
+    width: 40px;
+    height: 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    flex-shrink: 0;
+    display: block;
+  }
+
+  [data-theme="dark"] .swatch-pill-color {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .swatch-pill-name {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  /* Footer */
   .showcase-footer {
-    margin-top: 1rem;
+    padding: 0.875rem 1.75rem;
+    background-color: var(--bg-surface-subtle);
   }
 
-  .showcase-hint {
+  .showcase-footer-text {
     font-size: 0.75rem;
     color: var(--text-muted);
-    line-height: 1.4;
   }
 </style>
-
-<script>
-  const boxLid = document.getElementById('boxLid');
-  const labelEl = document.getElementById('currentColorLabel');
-  const swatchButtons = document.querySelectorAll('.swatch-btn');
-
-  const colorMap: Record<string, string> = {
-    navy: '#112038',
-    black: '#1C1D21',
-    maroon: '#631D27',
-    red: '#8F1E28',
-    purple: '#4A284D'
-  };
-
-  swatchButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const colorKey = btn.getAttribute('data-color') || 'navy';
-      const labelText = btn.getAttribute('data-label') || 'Navy Blue Velvet';
-
-      // Update Active State
-      swatchButtons.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-checked', 'false');
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-checked', 'true');
-
-      // Update Box Background
-      if (boxLid && colorMap[colorKey]) {
-        boxLid.style.backgroundColor = colorMap[colorKey];
-      }
-
-      // Update Label
-      if (labelEl) {
-        labelEl.textContent = labelText;
-      }
-    });
-  });
-</script>
